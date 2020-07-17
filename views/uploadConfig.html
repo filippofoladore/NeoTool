@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <title>NeoTool - Upload JSON</title>
+    
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="indietro">
+        <div class="logo">
+          <a href="/">NEOTOOL</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modalbox">
+      <div class="iconConfig"><i class="fas fa-check-circle"></i></div>
+      <p>Configuration file uploaded, redirect to dashboard! <br /><i class="fas fa-home"></i></p>
+    </div>
+
+    <div class="modalbox" id="rules">
+      <div class="iconConfig"><i class="fas fa-check-circle"></i></div>
+      <span class="close" id="closeTemplatePopup"
+        ><i class="fas fa-times-circle"></i
+      ></span>
+      <p>File structure must be the following: <br /></p>
+      <img src="/structure.png" alt="structure" width="50%" height="50%" />
+      <h2 id="downloadTemplate">
+        <i class="fas fa-download"></i> Download template
+      </h2>
+      <a style="display: none;" id="download">Download the configuration</a>
+    </div>
+
+    <div class="actionContainer">
+      <form
+        id="formUp"
+        method="post"
+        action="/uploadJSON"
+        class="actionItem"
+        enctype="multipart/form-data"
+      >
+        <h2>Upload JSON</h2>
+        <div class="upload-json-div">
+          <label id="choose-file-upload">
+            Choose file
+            <input
+              type="file"
+              id="fileUploaded"
+              name="config"
+              accept="application/JSON"
+              style="display: none;"
+            />
+          </label>
+        </div>
+        <button type="button" disabled id="uploadForm"> 
+          Upload
+        </button>
+      </form>
+    </div>
+
+    <div class="guidaContainer" id="guidaContainer">
+      JSON instructions
+    </div>
+  </body>
+  <script src="uploadJSON.js"></script>
+</html>

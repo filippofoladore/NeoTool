@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+    <script src="https://cdn.neo4jlabs.com/neovis.js/v1.2.1/neovis.js"></script>
+  <title>NeoTool - Insert</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="indietro">
+      <div class="logo">
+        <a href="/">NEOTOOL</a>
+      </div>
+    </div>
+
+
+  </div>
+
+  
+
+  <div class="inserimento">
+    <div class="navdiv">
+      <nav class="navbar" id="navbarTarget"></nav>
+    </div>
+
+    <div class="popupConfig">
+      <div class="iconConfig"><i class="fas fa-exclamation-triangle"></i></div>
+      <p id="popupConfig">
+        You have no configuration file, upload it or create it!
+      </p>
+      <a href="/configurazione" id="goToConfigPopup">Go</a>
+      <a href="/about" id="aboutPopup"><i class="far fa-question-circle"></i></a>
+      <a id="closePopup"><i class="fas fa-times"></i></a>
+    </div>
+
+    <div class="modalbox">
+      <div class="icon"><i class="fas fa-check"></i></div>
+      <p id="modal-text"></p>
+    </div>
+
+    <div class="modalAttr" id="modalAttr">
+      <div class="iconConfig"><i class="fas fa-edit"></i></div>
+        <form id="formAddAttr">
+        </form>
+      <a id="closePopupA">Close <i class="fas fa-times"></i></a>
+    </div>
+    
+
+    <form class="formIns" id="inserimentoForm">
+      <div class="campi">
+        <div id="fieldsetTarget">
+          <h2>Welcome!</h2>
+        </div>
+      </div>
+    </form>
+
+    <form class="formIns" id="connectForm" style="display: none;">
+      <div class="campi">
+        <fieldset id="fieldsetTarget">
+          <h2>Manage relationship 1/2</h2>
+          <div class="colContainer">
+            <div class="radioContainer colItem">
+              <ul class="radioList" id="radioList"></ul>
+            </div>
+            <div class="colItem">
+              <select id="selectNodiFrom" class="select">
+                <option value="">Choose</option>
+              </select>
+            </div>
+            <div class="colItem">
+              <ul class="check" id="radioCheck"></ul>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+
+    <form class="formIns" id="connectForm2" style="display: none;">
+      <div class="campi">
+        <fieldset id="fieldsetTarget">
+          <p id="back_co"><i class="fas fa-arrow-left"></i> Back</p>
+          <h2>Manage relationship 2/2</h2>
+          <div class="colContainer">
+            <div class="radioContainer colItem">
+              <ul class="radioList" id="radioListTo"></ul>
+            </div>
+            <div class="colItem">
+              <select id="selectNodiTo" class="select">
+                <option value="">Choose</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+
+    <div id="edit-graph-ins"><span>
+      Graph options:
+      <label><input type="checkbox" id="graph-show-relation">Only node / Node + relationship 
+        <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+        <span class="tooltip-text">Click to change visualization if you can't see nothing on the graph.</span></div> <br></span> 
+      
+        <div id="graph"></div>
+      </div>
+  </div>
+</body>
+
+<script src="interface.js"></script>
+
+</html>

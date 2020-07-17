@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <title>NeoTool</title>
+  </head>
+
+  <body>
+    <div id="particles-js"></div>
+
+    <div class="container">
+      <nav>
+        <input type="checkbox" id="nav" class="hidden" />
+        <label for="nav" class="nav-btn">
+          <i></i>
+          <i></i>
+          <i></i>
+        </label>
+        <div class="logo">
+          <a href="/">NEOTOOL</a>
+        </div>
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="/configuration"><i class="fas fa-cogs" aria-hidden="true"></i><span> </span>Configuration</a>
+            </li>
+            <li>
+              <a href="/insert"><i class="fas fa-file-import" aria-hidden="true"></i><span> </span>Insert</a>
+            </li>
+            <li>
+              <a href="/edit"><i class="fas fa-edit" aria-hidden="true"></i><span> </span>Edit</a>
+            </li>
+            <li>
+              <a href="/explore"><i class="fas fa-compass" aria-hidden="true"></i><span> </span>Explore</a>
+            </li>
+            <li>
+              <a href="/about"><i class="fas fa-info-circle" aria-hidden="true"></i><span> </span>About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="landing">
+      <div class="box">
+      <h2>Empowering Neo4j Graph Database with easy-to-use tools.</h2>
+      <div class="btns">
+        <a href="/dashboard" class="toDash">Visit the dashboard</a>
+        <a href="/about" class="moreInfo">More info</a>
+      </div>
+    </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS.load("particles-js", "particlesjs-config.json", function () {});
+  </script>
+</html>

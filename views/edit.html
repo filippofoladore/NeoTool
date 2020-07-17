@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.neo4jlabs.com/neovis.js/v1.2.1/neovis.js"></script>
+    <title>NeoTool - Edit</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="indietro">
+        <div class="logo">
+          <a href="/">NEOTOOL</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="colContainer">
+      <div class="edit-item">
+        Select node type:
+        <select id="edit-select-type">
+          <option value="">Choose type...</option>
+        </select>
+      </div>
+
+      <div class="edit-item" id="edit-select-container">
+        Select node:
+      </div>
+      <div class="edit-item">
+       <button id="edit-show-relation" disabled>Edit relationship</button>
+      </div>
+
+      
+      <div class="edit-item">
+        <h2>Node data:</h2>
+        <div id="edit-data">
+          <form id="edit-form"></form>
+          
+          <div id="edit-graph-ins"><span>
+            Graph options:
+            <label><input type="checkbox" id="graph-show-relation">Only node / Node + relationship
+              <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+              <span class="tooltip-text">Click to change visualization if you can't see nothing on the graph.</span></div> <br></span> 
+            
+              <div id="graph"></div>
+            </div>
+        </div>
+        
+       
+        <div id="edit-relation-box">
+       </div>
+
+
+      </div>
+
+  </body>
+  <script src="editGraph.js"></script>
+</html>
