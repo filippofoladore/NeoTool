@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "neotool",
-=======
-  "name": "NeoTool",
->>>>>>> 1a627c47eaebfe1222765acdbd58b7d9f7b2793a
   "version": "1.0.0",
   "description": "Empowering Neo4j Graph Database with easy-to-use tools.",
   "main": "app.js",
