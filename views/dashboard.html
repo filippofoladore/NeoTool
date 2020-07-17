@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <title>NeoTool - Dashboard</title>
+  </head>
+
+  <body>
+    <div class="home_titolo">DASHBOARD</div>
+
+    <div class="popupConfig">
+      <div class="iconConfig"><i class="fas fa-exclamation-triangle"></i></div>
+      <p id="popupConfig">
+        You have no configuration file, upload it or create it!
+      </p>
+      <a href="/configuration" id="goToConfigPopup">Go</a>
+      <a href="/about" id="aboutPopup"><i class="far fa-question-circle"></i></a>
+      <a id="closePopup"><i class="fas fa-times"></i></a>
+    </div>
+
+    <div class="home_container">
+      <div class="it_inserimento">
+        Insert data
+        <form class="home_form" action="/insert.html" method="get">
+          <a href="/insert" id="btn_home_ins" class="homeBtn">Go</a>
+        </form>
+      </div>
+
+      <div class="it_esplora">
+        Explore graph
+        <form class="home_form" action="/explore.html" method="get">
+          <a href="/explore" id="btn_home_esp" class="homeBtn">Go</a>
+        </form>
+      </div>
+
+      <div class="it_modifica">
+        Edit graph
+        <form class="home_form" action="/edit.html" method="get">
+          <a href="/edit" id="btn_home_mod" class="homeBtn">Go</a>
+        </form>
+      </div>
+
+      <div class="it_configurazione">
+        Configuration
+        <form class="home_form" action="/configuration.html" method="get">
+          <a href="/configuration" id="btn_home_con" class="homeBtn">Go</a>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    document
+      .getElementById("btn_home_ins")
+      .addEventListener("mouseenter", () => {
+        document.getElementById("btn_home_ins").innerHTML =
+          "<i class='fas fa-arrow-right'></i>";
+        document.getElementById("btn_home_ins").style.color = "#fff";
+        document.getElementById("btn_home_ins").style.backgroundColor =
+          "var(--button-hover-color)";
+      });
+
+    document
+      .getElementById("btn_home_ins")
+      .addEventListener("mouseleave", () => {
+        document.getElementById("btn_home_ins").innerHTML = "Go";
+        document.getElementById("btn_home_ins").style.color = "#232323";
+        document.getElementById("btn_home_ins").style.backgroundColor =
+          "var(--dark-bg-color)";
+      });
+
+    document
+      .getElementById("btn_home_esp")
+      .addEventListener("mouseenter", () => {
+        document.getElementById("btn_home_esp").innerHTML =
+          "<i class='fas fa-arrow-right'></i>";
+        document.getElementById("btn_home_esp").style.color = "#fff";
+        document.getElementById("btn_home_esp").style.backgroundColor =
+          "var(--button-hover-color)";
+      });
+
+    document
+      .getElementById("btn_home_esp")
+      .addEventListener("mouseleave", () => {
+        document.getElementById("btn_home_esp").innerHTML = "Go";
+        document.getElementById("btn_home_esp").style.color = "#232323";
+        document.getElementById("btn_home_esp").style.backgroundColor =
+          "var(--dark-bg-color)";
+      });
+
+    document
+      .getElementById("btn_home_con")
+      .addEventListener("mouseenter", () => {
+        document.getElementById("btn_home_con").innerHTML =
+          "<i class='fas fa-arrow-right'></i>";
+        document.getElementById("btn_home_con").style.color = "#fff";
+        document.getElementById("btn_home_con").style.backgroundColor =
+          "var(--button-hover-color)";
+      });
+
+    document
+      .getElementById("btn_home_con")
+      .addEventListener("mouseleave", () => {
+        document.getElementById("btn_home_con").innerHTML = "Go";
+        document.getElementById("btn_home_con").style.color = "#232323";
+        document.getElementById("btn_home_con").style.backgroundColor =
+          "var(--dark-bg-color)";
+      });
+
+    document
+      .getElementById("btn_home_mod")
+      .addEventListener("mouseenter", () => {
+        document.getElementById("btn_home_mod").innerHTML =
+          "<i class='fas fa-arrow-right'></i>";
+        document.getElementById("btn_home_mod").style.color = "#fff";
+        document.getElementById("btn_home_mod").style.backgroundColor =
+          "var(--button-hover-color)";
+      });
+
+    document
+      .getElementById("btn_home_mod")
+      .addEventListener("mouseleave", () => {
+        document.getElementById("btn_home_mod").innerHTML = "Go";
+        document.getElementById("btn_home_mod").style.color = "#232323";
+        document.getElementById("btn_home_mod").style.backgroundColor =
+          "var(--dark-bg-color)";
+      });
+  </script>
+  <script src="index.js"></script>
+</html>

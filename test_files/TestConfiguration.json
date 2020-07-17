@@ -1,0 +1,131 @@
+{
+  "nodes": [
+    {
+      "title": "person",
+      "abbrv": "ps",
+      "neo4jName": "Person",
+      "attributes": [
+        {
+          "id": 1594831907823,
+          "name": "name",
+          "placeholder": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": 1594831917606,
+          "name": "lastname",
+          "placeholder": "Last Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": 1594831927596,
+          "name": "dob",
+          "placeholder": "Date of Birth",
+          "required": false,
+          "type": "date"
+        }
+      ],
+      "relationship": [
+        {
+          "id": 1594832042059,
+          "relName": "HAS",
+          "relTarget": ["car"],
+          "relAttr": true,
+          "relAttrName": ["year"]
+        },
+        {
+          "id": 1594832070672,
+          "relName": "WATCH",
+          "relTarget": ["mov"],
+          "relAttr": false
+        }
+      ],
+      "id": 1594831854591
+    },
+    {
+      "title": "car",
+      "abbrv": "car",
+      "neo4jName": "Car",
+      "attributes": [
+        {
+          "id": 1594831940024,
+          "name": "model",
+          "placeholder": "Model",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": 1594831952738,
+          "name": "year",
+          "placeholder": "Year",
+          "required": false,
+          "type": "date"
+        },
+        {
+          "id": 1594831978740,
+          "name": "Brand",
+          "placeholder": "Brand",
+          "required": false,
+          "type": "multi",
+          "multi": ["Audi", "Tesla", "BMW"]
+        },
+        {
+          "id": 1594831993112,
+          "name": "ID",
+          "placeholder": "ID",
+          "type": "text",
+          "required": true
+        }
+      ],
+      "relationship": [
+        {
+          "id": 1594832122976,
+          "relName": "SHOWS_UP_IN",
+          "relTarget": ["mov"],
+          "relAttr": true,
+          "relAttrName": ["minute_of_movie"]
+        }
+      ],
+      "id": 1594831863193
+    },
+    {
+      "title": "movie",
+      "abbrv": "mov",
+      "neo4jName": "Movie",
+      "attributes": [
+        {
+          "id": 1594832003806,
+          "name": "name",
+          "placeholder": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": 1594832012407,
+          "name": "year",
+          "placeholder": "year",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": 1594832025554,
+          "name": "budget",
+          "placeholder": "Budget",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "relationship": [
+        {
+          "id": 1594832094484,
+          "relName": "ACTOR",
+          "relTarget": ["ps"],
+          "relAttr": false
+        }
+      ],
+      "id": 1594831896066
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+  <title>NeoTool - Create configuration</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="indietro">
+      <div class="logo">
+        <a href="/">NEOTOOL</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="container" style="display: none;">
+    <h1 class="addTitle">Add nodes</h1>
+    <ul class="nodeList jsNodeList"></ul>
+
+    <form class="addNodeForm" id="addNodeForm">
+      <!-- add autofocus back -->
+      <input type="text" placeholder="Node name (_ space)" class="jsNodeInput" id="nodeTitle" required
+        autocomplete="off" />
+      <input type="text" placeholder="Abbreviation" class="jsNodeInput" id="nodeAbbrv" required autocomplete="off" />
+      <input type="text" placeholder="Graph name" class="jsNodeInput" id="nodeNeo" required autocomplete="off" />
+      <input type="submit" value="Insert" id="nodeSubmit" />
+    </form>
+    <h3 id="addContinue">Continue <i class="fas fa-arrow-right"></i></h3>
+  </div>
+
+  <div class="attributesContainer" id="attributesContainer" style="display: none;">
+    <p id="indietro"><i class="fas fa-arrow-left"></i> Back</p>
+    <h1>Nodes - Add attributes</h1>
+    <ul class="nodeList" id="nodeList"></ul>
+    <h3 id="addContinue2">Continue <i class="fas fa-arrow-right"></i></h3>
+  </div>
+
+  <div class="relationshipContainer" id="relationshipContainer" style="display: none;">
+    <p id="indietro2"><i class="fas fa-arrow-left"></i> Back</p>
+    <h1>Nodes - Add relationship</h1>
+    <ul class="nodeList" id="relList"></ul>
+    <h3 id="addContinueTerm">
+      Finish and create <i class="fas fa-arrow-right"></i>
+    </h3>
+    <a style="display: none;" id="download">Download the configuration</a>
+  </div>
+
+
+  <div class="modalAttributes" style="display: none;">
+    <div class="iconConfig"><i class="fas fa-edit"></i></div>
+    <p id="popupConfig"></p>
+
+    <form class="addAttributes" id="addAttributes">
+      <div>
+        <label for="name">Attribute name:
+          <input type="text" name="name" id="attrName" placeholder="Insert" required autocomplete="off"
+            required /></label>
+      </div>
+      <div>
+        <label for="placeholder">Placeholder:
+          <input type="text" name="placeholder" id="attrPlaceholder" placeholder="Insert" required autocomplete="off"
+            required /></label>
+      </div>
+      <label class="checkcontainer">
+        Required
+        <input type="checkbox" name="required" id="attrRequired" />
+        <span class="checkmark"></span>
+      </label>
+      <select name="type" id="attrType">
+        <option value="text">Text</option>
+        <option value="multi">Multi</option>
+        <option value="date">Date</option>
+        <option value="number">Number</option>
+      </select>
+      <div id="multiOptionDiv" hidden>
+        <label for="multiOption">Options (separated by ; ):
+          <input type="text" name="multiOption" id="multiOption" placeholder="e.g.: 1;2;3"
+            autocomplete="off" /></label>
+      </div>
+
+      <br />
+      <input type="submit" value="Insert" class="addAttrSubmit" />
+    </form>
+
+    <ul class="nodeList jsAttrList" id="attributesList"></ul>
+    <a id="closePopup">Close <i class="fas fa-times"></i></a>
+  </div>
+
+  <div class="modalRels" id="modalRels" style="display: none;">
+    <div class="iconConfig"><i class="fas fa-edit"></i></div>
+    <p id="popupConfig2"></p>
+
+    <form class="addRels" id="addRels">
+      <div>
+        <label for="relName">Relation name:
+          <input type="text" name="name" id="relName" placeholder="Insert" required autocomplete="off"
+            required /></label>
+      </div>
+      <div>
+        <label for="targetRels">Relation target:
+          <ul id="targetRels">
+          </ul>
+        </label>
+      </div>
+      <div>
+        <label class="checkcontainer">
+         Relation attributes: 
+          <input type="checkbox" name="required" id="attrRels" />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div id="attrNameAttr"  style="display: none;">
+        <label for="nomeAttr"> Attributes name (separated by ; if multiple):<input type="text" name="nomeAttr" id="attrNomeAttr"></label>
+      </div>
+      <br />
+      <input type="submit" value="Insert" class="addRelsSubmit" />
+    </form>
+
+    <ul class="nodeList jsRelsList" id="relsList"></ul>
+    <a id="closePopupR">Close <i class="fas fa-times"></i></a>
+  </div>
+
+  <div class="modalTitle" id="modalTitle">
+    <div class="iconConfig"><i class="fas fa-edit"></i></div>
+    <div>
+      <label for="name">New configuration name:
+        <input autofocus type="text" name="name" id="confTitle" placeholder="Name..." required autocomplete="off"
+          required /></label>
+      <a id="addPopupT">Ok <i class="fas fa-pencil-alt"></i></a>
+    </div>
+    <div>
+      <form action="" id="formUp">
+        <label for="fileUploaded">Or edit an existing configuration: <br>
+          <label id="choose-file">
+              Choose file
+               <input type="file" id="fileUploaded" name="config" accept="application/JSON" style="display:none;" />
+          </label>
+        </label>
+        <button type="button" disabled id="uploadConfig"> 
+          Upload
+        </button>
+    </div>
+    </form>
+
+    <a id="closePopupT" href="/configurazione">Close <i class="fas fa-times"></i></a>
+  </div>
+
+  <svg>
+    <defs>
+      <symbol id="nodeDelete" viewBox="0 0 448 448">
+        <path
+          d="m224 0c-123.710938 0-224 100.289062-224 224s100.289062 224 224 224 224-100.289062 224-224c-.132812-123.65625-100.34375-223.867188-224-224zm124.449219 325.824219c4.15625 4.015625 5.828125 9.964843 4.363281 15.558593s-5.835938 9.964844-11.429688 11.429688-11.542968-.207031-15.558593-4.363281l-101.824219-101.824219-101.824219 101.824219c-6.277343 6.0625-16.257812 5.976562-22.429687-.195313s-6.257813-16.152344-.195313-22.429687l101.824219-101.824219-101.824219-101.824219c-4.15625-4.015625-5.828125-9.964843-4.363281-15.558593s5.835938-9.964844 11.429688-11.429688 11.542968.207031 15.558593 4.363281l101.824219 101.824219 101.824219-101.824219c6.277343-6.0625 16.257812-5.976562 22.429687.195313s6.257813 16.152344.195313 22.429687l-101.824219 101.824219zm0 0"
+          fill="#D80027" />
+      </symbol>
+    </defs>
+  </svg>
+</body>
+<script src="addConfig.js"></script>
+
+</html>
