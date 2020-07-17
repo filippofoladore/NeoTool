@@ -1,5 +1,5 @@
 {
-  "name": "sistema",
+  "name": "NeoTool",
   "version": "1.0.0",
   "description": "Empowering Neo4j Graph Database with easy-to-use tools.",
   "main": "app.js",
